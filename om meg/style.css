@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+:root {
+    --c1: black;
+    --c2: #222;
+    --c3: #333;
+    --nav-hoyde: clamp(35px, 12vh, 70px);
+}
+
+.bla {
+    --c1: #001a33;
+    --c2: #004080;
+    --c3: #0066cc;
+}
+
+.rod {
+    --c1: #1a0000;
+    --c2: #660000;
+    --c3: #d42e2e;
+}
+
+html {
+    background: black;
+    min-height: 100%;
+    scrollbar-color: #333 black;
+    scrollbar-width: thin;
+    color-scheme: dark;
+}
+
+body {
+    font-family: 'Short Stack', Arial, sans-serif;
+    color: white;
+    background: linear-gradient(270deg, var(--c1), var(--c2), var(--c3), var(--c1));
+    background-size: 400% 400%;
+    animation: flytt 8s infinite;
+    min-height: 100vh;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+header {
+    padding-top: var(--nav-hoyde);
+}
+
+nav {
+    display: flex;
+    background-color: black;
+    border-bottom: 1px solid #222;
+    width: 100%;
+    height: var(--nav-hoyde);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    padding-top: clamp(2.5px, 3vh, 10px);
+    padding-bottom: clamp(2.5px, 3vh, 10px);
+    align-items: center;
+    justify-content: center;
+
+    ul {
+        display: flex;
+        list-style: none;
+        justify-content: space-evenly;
+        width: 100%;
+
+        a {
+            color: white;
+            text-decoration: none;
+            padding: 7px 7.2vw;
+            border: 1px solid white;
+            border-radius: 20px;
+            font-size: clamp(11px, 1.4vw, 14px);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        a:hover {
+            background-color: white;
+            color: black;
+        }
+
+    }
+}
+
+
+
+
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hjem section {
+    min-height: calc(100vh - var(--nav-hoyde));
+    justify-content: center;
+}
+
+#margin {
+    min-height: 10vh;
+    max-height: 10vh;
+}
+
+.hjem .hero {
+    margin-top: var(--nav-hoyde);
+    gap: 1.5vw;
+    position: relative;
+}
+
+.hjem .hero h1 {
+    font-size: clamp(28px, 5vw, 56px);
+}
+
+.hjem .hero p {
+    font-size: clamp(8px, 2vw, 20px);
+}
+
+#bilder h2,
+#ski h2 {
+    margin-bottom: 25px;
+    font-size: clamp(20px, 3vw, 32px);
+}
+
+.gal h1,
+.ski h1 {
+    margin: 20px 0 10px;
+}
+
+.ski h1 {
+    font-size: clamp(28px, 5vw, 56px);
+}
+
+.hjem .rad {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.hjem .boks {
+    width: clamp(80px, 11.33vw, 200px);
+    height: clamp(80px, 11.33vw, 200px);
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 16px;
+    display: flex;
+    overflow: hidden;
+}
+
+.hjem .boks:hover,
+.hjem .stor:hover,
+.hjem .liten:hover {
+    scale: 125%;
+}
+
+button:hover {
+    scale: 125%;
+}
+
+.hjem .topp {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.hjem .stor,
+.hjem .liten {
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.hjem .stor {
+    width: min(80vw, 700px);
+    height: clamp(85px, 24vw, 220px);
+}
+
+.hjem .bunn {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2vw;
+    width: 100%;
+}
+
+.hjem .liten {
+    width: clamp(100px, 36vw, 340px);
+    height: clamp(100px, 36vw, 340px);
+}
+
+.gal .rad {
+    margin-top: 50px;
+    display: flex;
+    height: 50vw;
+    width: 100%;
+    padding: 20px;
+}
+
+.gal .boks {
+    width: clamp(150px, 32vw, 400px);
+    height: clamp(150px, 32vw, 400px);
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 16px;
+    display: block;
+    overflow: hidden;
+}
+
+.gal .rad :nth-child(2) {
+    margin-left: -90px;
+}
+
+.gal .rad :nth-child(3) {
+    margin-left: -100px;
+}
+
+.gal .rad :nth-child(4) {
+    margin-left: -110px;
+}
+
+.gal .rad :nth-child(5) {
+    margin-left: -120px;
+}
+
+.gal .boks:hover {
+    transform: scale(1.4);
+}
+
+.ski .topp {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.ski .stor {
+    display: flex;
+    flex-direction: column;
+    width: clamp(300px, 90vw, 740px);
+    height: clamp(150px, 32vw, 360px);
+    border: 1px solid white;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.ski .stor img {
+    height: 60%;
+}
+
+.ski .stor .tekst {
+    padding: 8px 16px;
+    line-height: 1.5;
+    font-size: clamp(12px, 2vw, 18px);
+}
+
+.ski .bunn {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.ski .liten {
+    width: clamp(150px, 32vw, 360px);
+    height: clamp(150px, 32vw, 360px);
+    border: 1px solid white;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.ski .stor:hover,
+.ski .liten:hover {
+    transform: scale(1.3);
+}
+
+.tema {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 999;
+}
+
+.tema div {
+    align-self: center;
+    margin-left: 20px;
+    font-size: clamp(12px, 1.2vw, 14px);
+}
+
+.tema button {
+    padding: 8px 14px;
+    background: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: clamp(12px, 1.2vw, 14px);
+}
+
+.tema button:hover {
+    background: white;
+    color: black;
+}
+
+.hjem .pil {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgb(202, 128, 128);
+    border-right: transparent;
+    border-top: transparent;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    margin-left: -20px;
+    animation: pil 2s infinite;
+}
+
+@keyframes pil {
+
+    0%,
+    100% {
+        top: 62%;
+    }
+
+    50% {
+        top: 78%;
+    }
+}
+
+.ski .pil {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgb(202, 128, 128);
+    border-right: transparent;
+    border-top: transparent;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 82%;
+    animation: pilside 3.5s infinite;
+}
+
+.ski .pil2 {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgb(202, 128, 128);
+    border-right: transparent;
+    border-top: transparent;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 15%;
+    animation: pilside 3.5s infinite;
+    animation-delay: 1s;
+}
+
+@keyframes pilside {
+
+    0%,
+    100% {
+        top: 15%;
+    }
+
+    50% {
+        top: 85%;
+    }
+}
+
+@keyframes flytt {
+    0% {
+        background-position: 0% 50%;
+        animation-timing-function: ease-in;
+    }
+
+    50% {
+        background-position: 100% 50%;
+        animation-timing-function: ease-out;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

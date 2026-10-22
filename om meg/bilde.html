@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
+</head>
+
+<body class="gal">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="bilde.html">Bilder</a></li>
+                <li><a href="ski.html">Ski</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Bilder</h1>
+        <p>Her kommer bilde serie</p>
+        <div class="rad">
+            <div class="boks"><img src="tur.JPG" alt="Tur"></div>
+            <div class="boks"><img src="telt.JPG" alt="Telt"></div>
+            <div class="boks"><img src="vintertur.JPG" alt="Vintertur"></div>
+            <div class="boks"><img src="stein.JPG" alt="Stein"></div>
+            <div class="boks"><img src="gunner.JPG" alt="Gunner"></div>
+        </div>
+    </section>
+    <div class="tema">
+        <div>
+            <h4>Trykk på knappene ---></h4>
+        </div>
+        <button onclick="document.body.classList.remove('bla','rod')">Sort</button>
+        <button onclick="document.body.classList.remove('rod');document.body.classList.add('bla')">Blå</button>
+        <button onclick="document.body.classList.remove('bla');document.body.classList.add('rod')">Rød</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    height: 100vh;
+
+}
+
+.test {
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+
+
+
+
+
+}
+
+.box {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 35%;
+    background-color: black;
+    border: 10px red solid;
+
+}
+
+.fp {
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-evenly;
+
+
+
+}
+
+.fpp {
+    height: 400px;
+    width: 400px;
+    background-color: black;
+}
+
+.gp {
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.gpp {
+    height: 400px;
+    width: 400px;
+    background-color: rgb(173, 122, 122);
+}

@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#04050a" />
+    <title>NEXUS // prosjekter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="preloader">
+      <div class="preloader__logo">NEXUS</div>
+      <div class="preloader__bar"><div class="preloader__fill"></div></div>
+      <div class="preloader__meta">
+        <span>laster prosjektindeeks</span>
+        <span id="preNum">000%</span>
+        <span>v4.0.2</span>
+      </div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="page-wipe"></div>
+    <div class="fx-grid"></div>
+    <canvas id="bgCanvas"></canvas>
+    <div class="fx-vig"></div>
+    <div class="fx-scan"></div>
+    <div class="fx-flash"></div>
+    <div class="progress"></div>
+
+    <header class="nav">
+      <a class="nav__brand" href="index.html"><i></i>NEXUS//</a>
+      <ul class="nav__links">
+        <li><a class="nav__link" href="index.html">hjem</a></li>
+        <li><a class="nav__link" href="prosjekter.html">prosjekter</a></li>
+        <li><a class="nav__link" href="lab.html">lab</a></li>
+        <li><a class="nav__link" href="om.html">om meg</a></li>
+        <li><a class="nav__link" href="kontakt.html">kontakt</a></li>
+      </ul>
+      <div class="nav__tools">
+        <button class="icon-btn" id="paletteBtn" title="kommandopalett (Ctrl+K)">⌘</button>
+        <button class="icon-btn" id="themeBtn" title="tema">◑</button>
+        <button class="icon-btn" id="soundBtn" title="lyd">♪</button>
+        <button class="icon-btn burger" title="meny">≡</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-head wrap">
+        <div class="eyebrow" data-reveal>// arkiv 2024 — 2026</div>
+        <h1 class="h1" data-reveal data-delay="70">
+          <span class="glitch" data-text="PROSJEKTER">PROSJEKTER</span>
+        </h1>
+        <p class="lead" data-reveal data-delay="140">
+          Ni byggeklosser filtrert etter type. Klikk et kort for å åpne detaljvinduet —
+          det skyves inn med samme easing som resten av systemet.
+        </p>
+
+        <div class="filters mt-m" data-reveal data-delay="200">
+          <button class="filter on" data-filter="alle">alle</button>
+          <button class="filter" data-filter="web">web</button>
+          <button class="filter" data-filter="canvas">canvas</button>
+          <button class="filter" data-filter="verktoy">verktøy</button>
+          <button class="filter" data-filter="ai">ai</button>
+        </div>
+      </section>
+
+      <section class="wrap" style="padding-bottom: 40px">
+        <div class="grid grid--3" id="projectGrid">
+          <article
+            class="project"
+            data-cat="web"
+            data-reveal
+            data-title="Orbit Dashboard"
+            data-desc="Et kontrollpanel som henter data og tegner grafer i sanntid. Egen liten grafmotor bygget på canvas, med tema-bytte, tastaturnavigasjon og lagret brukerpreferanse.oppsettet er rutenettbasert med magnetisk snap."
+            data-year="2026"
+          >
+            <div class="project__viz"><span>ORBIT</span></div>
+            <div class="project__body">
+              <h3>Orbit Dashboard</h3>
+              <p>Sanntidskontrollpanel med egen grafmotor tegnet direkte på canvas.</p>
+              <div class="chips"><span class="chip">web</span><span class="chip">canvas</span></div>
+            </div>
+          </article>
+
+          <article
+            class="project"
+            data-cat="canvas"
+            data-reveal
+            data-delay="60"
+            data-title="Pulse Player"
+            data-desc="Musikkspiller med frekvensanalyse via Web Audio API. Bass, mellomtone og diskant styrer hver sin gruppe partikler, og hele visningen reagerer på mikrofonnivået om du kobler til."
+            data-year="2025"
+          >
+            <div class="project__viz"><span>PULSE</span></div>
+            <div class="project__body">
+              <h3>Pulse Player</h3>
+              <p>Frekvensstyrte partikler som lever av musikken som spilles av.</p>
+              <div class="chips"><span class="chip">canvas</span><span class="chip">audio</span></div>
+            </div>
+          </article>
+
+          <article
+            class="project"
+            data-cat="verktoy"
+            data-reveal
+            data-delay="120"
+            data-title="Grid Engine"
+            data-desc="Et eget oppsettsverktøy der du drar, slipper og magnetisk låser komponenter til rutenettet. Støtter flere lag, hjelpelinjer, zoom og eksport av layout som JSON."
+            data-year="2025"
+          >
+            <div class="project__viz"><span>GRID</span></div>
+            <div class="project__body">
+              <h3>Grid Engine</h3>
+              <p>Dra-og-slipp-layout med magnetisk snap og hjelpelinjer.</p>
+              <div class="chips"><span class="chip">verktøy</span><span class="chip">ui</span></div>
+            </div>
+          </article>
+
+          <article
+            class="project"
+            data-cat="ai"
+            data-reveal
+            data-title="Signal"
+            data-desc="Et lite grensesnitt som summerer lange tekster og foreslår nøkkelord. Bygget som ren klient-app med streaming-visning der svaret skrives ut tegn for tegn."
+            data-year="2026"
+          >
+            <div class="project__viz"><span>SIGNAL</span></div>
+            <div class="project__body">
+              <h3>Signal</h3>
+              <p>Strømmende sammendrag med tegn-for-tegn utskrift i grensesnittet.</p>
+              <div class="chips"><span class="chip">ai</span><span class="chip">web</span></div>
+            </div>
+          </article>
+
+          <article
+            class="project"
+            data-cat="canvas"
+            data-reveal
+            data-delay="60"
+            data-title="Neon Trails"
+            data-desc="En partikkelmotor der musepekeren etterlater seg spor som bremser, endrer farge og dør ut. Bruker objektpool slik at det aldri opprettes nye objekter i løkka."
+            data-year="2024"
+          >
+            <div class="project__viz"><span>TRAIL</span></div>
+            <div class="project__body">
+              <h3>Neon Trails</h3>
+              <p>Objektpool-drevet partikkelspor med fargegradering over tid.</p>
+              <div class="chips"><span class="chip">canvas</span><span class="chip">raf</span></div>
+            </div>
+          </article>
+
+          <article
+            class="project"
+            data-cat="web"
+            data-reveal
+            data-delay="120"
+            data-title="Kinetic Type"
+            data-desc="Typografiside der hvert ord reagerer på scroll-hastighet og musvinkel. Bokstavene strekkes med variabel font-vekt og setter seg tilbake når bevegelsen stopper."
+            data-year="2024"
+          >
+            <div class="project__viz"><span>TYPE</span></div>
+            <div class="project__body">
+              <h3>Kinetic Type</h3>
+              <p>Typografi som strekker seg etter scroll-hastighet og retning.</p>
+              <div class="chips"><span class="chip">web</span><span class="chip">css</span></div>
+            </div>
+          </article>
+
+          <article
+            class="project"
+            data-cat="verktoy"
+            data-reveal
+            data-title="Snippet Vault"
+            data-desc="Lokal kodebank med fulltekstsøk, tagger og hurtigtaster. Alt lagres i nettleseren og eksporteres som én fil du kan bære med deg."
+            data-year="2025"
+          >
+            <div class="project__viz"><span>VAULT</span></div>
+            <div class="project__body">
+              <h3>Snippet Vault</h3>
+              <p>Kodebank med søk, tagger og tastatursnarveier i nettleseren.</p>
+              <div class="chips"><span class="chip">verktøy</span><span class="chip">storage</span></div>
+            </div>
+          </article>
+
+          <article
+            class="project"
+            data-cat="ai"
+            data-reveal
+            data-delay="60"
+            data-title="Echo Chat"
+            data-desc="Et samtalegrensesnitt med mørkt tema, markdown-visning og skriveindikator. Svarene animeres inn i synlig takt, linje for linje."
+            data-year="2026"
+          >
+            <div class="project__viz"><span>ECHO</span></div>
+            <div class="project__body">
+              <h3>Echo Chat</h3>
+              <p>Samtalevisning med markdown og linjevis inngangsanimasjon.</p>
+              <div class="chips"><span class="chip">ai</span><span class="chip">ui</span></div>
+            </div>
+          </article>
+
+          <article
+            class="project"
+            data-cat="web"
+            data-reveal
+            data-delay="120"
+            data-title="Nexus Site"
+            data-desc="Denne siden. Fem undersider, egen kommandopalett, custom cursor, side-wipe, partikkelnettverk, tema-bytte og lydmotor — alt uten rammeverk."
+            data-year="2026"
+          >
+            <div class="project__viz"><span>THIS</span></div>
+            <div class="project__body">
+              <h3>Nexus Site</h3>
+              <p>Flersides hitech-oppsett med palett, wipe og levende bakgrunn.</p>
+              <div class="chips"><span class="chip">web</span><span class="chip">js</span></div>
+            </div>
+          </article>
+        </div>
+
+        <p class="lead center mt-l" id="emptyMsg" style="display: none; margin-inline: auto">
+          Ingen prosjekter i denne kategorien.
+        </p>
+      </section>
+
+      <section class="section wrap">
+        <div class="card center" data-reveal="zoom">
+          <h2 class="h2">Vil du ha noe <span class="grad">lignende?</span></h2>
+          <div class="hero__actions" style="justify-content: center; margin-top: 24px">
+            <a class="btn btn--primary" href="kontakt.html">send en melding</a>
+            <a class="btn" href="lab.html">leke litt først</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__grid">
+          <div>
+            <a class="nav__brand" href="index.html"><i></i>NEXUS//</a>
+            <p class="lead mt-s" style="font-size: 15px">
+              Bygget for moro skyld. Ingen rammeverk, bare HTML, CSS og JavaScript.
+            </p>
+          </div>
+          <div class="footer__links">
+            <a href="index.html">hjem</a>
+            <a href="prosjekter.html">prosjekter</a>
+            <a href="lab.html">lab</a>
+            <a href="om.html">om meg</a>
+            <a href="kontakt.html">kontakt</a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© 2026 NEXUS SYSTEMS</span>
+          <span class="clock">--:--:--</span>
+          <span>trykk <b class="kbd">Ctrl+K</b> for palett</span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal" id="modal">
+      <div class="modal__box">
+        <button class="icon-btn modal__close" id="modalClose">✕</button>
+        <div class="eyebrow" id="mYear">// 2026</div>
+        <h3 id="mTitle">—</h3>
+        <p id="mDesc">—</p>
+        <div class="chips mt-m" id="mChips"></div>
+      </div>
+    </div>
+
+    <div class="palette" id="palette">
+      <div class="palette__box">
+        <input id="paletteInput" type="text" placeholder="søk etter side..." autocomplete="off" />
+        <ul id="paletteList">
+          <li data-href="index.html">hjem <span>01</span></li>
+          <li data-href="prosjekter.html">prosjekter <span>02</span></li>
+          <li data-href="lab.html">lab <span>03</span></li>
+          <li data-href="om.html">om meg <span>04</span></li>
+          <li data-href="kontakt.html">kontakt <span>05</span></li>
+        </ul>
+        <div class="palette__hint">↑↓ for å navigere · enter for å åpne · esc for å lukke</div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/prosjekter.js"></script>
+  </body>
+</html>

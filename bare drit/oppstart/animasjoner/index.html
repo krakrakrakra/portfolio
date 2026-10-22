@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasjoner</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <section class="hero">
+        <h1>Scroll ned</h1>
+        <p>↓</p>
+    </section>
+
+    <section class="box reveal">1</section>
+    <section class="box reveal">2</section>
+    <section class="box reveal">3</section>
+
+    <script>
+        // Fallback for nettlesere som ikke støtter CSS view-timeline
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

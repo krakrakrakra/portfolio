@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#04050a" />
+    <title>NEXUS // hitech lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="preloader">
+      <div class="preloader__logo">NEXUS</div>
+      <div class="preloader__bar"><div class="preloader__fill"></div></div>
+      <div class="preloader__meta">
+        <span>booting kernel</span>
+        <span id="preNum">000%</span>
+        <span>v4.0.2</span>
+      </div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="page-wipe"></div>
+    <div class="fx-grid"></div>
+    <canvas id="bgCanvas"></canvas>
+    <div class="fx-vig"></div>
+    <div class="fx-scan"></div>
+    <div class="fx-flash"></div>
+    <div class="progress"></div>
+
+    <header class="nav">
+      <a class="nav__brand" href="index.html"><i></i>NEXUS//</a>
+      <ul class="nav__links">
+        <li><a class="nav__link" href="index.html">hjem</a></li>
+        <li><a class="nav__link" href="prosjekter.html">prosjekter</a></li>
+        <li><a class="nav__link" href="lab.html">lab</a></li>
+        <li><a class="nav__link" href="om.html">om meg</a></li>
+        <li><a class="nav__link" href="kontakt.html">kontakt</a></li>
+      </ul>
+      <div class="nav__tools">
+        <button class="icon-btn" id="paletteBtn" title="kommandopalett (Ctrl+K)">⌘</button>
+        <button class="icon-btn" id="themeBtn" title="tema">◑</button>
+        <button class="icon-btn" id="soundBtn" title="lyd">♪</button>
+        <button class="icon-btn burger" title="meny">≡</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero wrap">
+        <div class="orbit" data-depth="2">
+          <div class="orbit__ring"><span class="orbit__dot"></span></div>
+          <div class="orbit__ring"></div>
+          <div class="orbit__ring"></div>
+          <div class="orbit__core"></div>
+        </div>
+
+        <div class="hero__tags" data-reveal>
+          <span class="tag live">● system online</span>
+          <span class="tag">60 fps</span>
+          <span class="tag">canvas + css</span>
+          <span class="tag">ingen rammeverk</span>
+        </div>
+
+        <h1 class="h1" data-reveal data-delay="80">
+          <span class="glitch" data-text="BYGGER">BYGGER</span><br />
+          <span class="grad">FREMTIDEN</span>
+        </h1>
+
+        <p class="lead" data-reveal data-delay="160">
+          Et over-designed digitalt laboratorium. Fem undersider, dusinvis av
+          animasjoner, interaktive canvas-leker og et kommandopanel du kan åpne med
+          <span class="kbd">Ctrl</span> + <span class="kbd">K</span>.
+        </p>
+
+        <div class="hero__actions" data-reveal data-delay="240">
+          <a class="btn btn--primary" href="lab.html">start eksperimentet</a>
+          <a class="btn" href="prosjekter.html">se prosjekter</a>
+        </div>
+
+        <div class="hero__stats" data-reveal data-delay="320">
+          <div class="stat">
+            <b data-count="5" data-suffix="">0</b>
+            <span>undersider</span>
+          </div>
+          <div class="stat">
+            <b data-count="47" data-suffix="+">0</b>
+            <span>animasjoner</span>
+          </div>
+          <div class="stat">
+            <b data-count="60" data-suffix=" fps">0</b>
+            <span>rendermål</span>
+          </div>
+          <div class="stat">
+            <b data-count="100" data-suffix="%">0</b>
+            <span>ren js</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <div>
+            canvas <span>//</span> glitch <span>//</span> parallax <span>//</span> partikler
+            <span>//</span> kommandopalett <span>//</span> custom cursor <span>//</span>
+            tema-bytte <span>//</span> side-wipe <span>//</span> WebAudio <span>//</span>
+          </div>
+          <div>
+            canvas <span>//</span> glitch <span>//</span> parallax <span>//</span> partikler
+            <span>//</span> kommandopalett <span>//</span> custom cursor <span>//</span>
+            tema-bytte <span>//</span> side-wipe <span>//</span> WebAudio <span>//</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="section wrap">
+        <div class="eyebrow" data-reveal>// kjernesystemer</div>
+        <h2 class="h2" data-reveal data-delay="60">Alt kjører<br /><span class="grad">i sanntid</span></h2>
+
+        <div class="grid grid--3 mt-l">
+          <article class="card tilt" data-reveal data-delay="0">
+            <div class="card__icon">01</div>
+            <h3>Partikkelnettverk</h3>
+            <p>
+              Canvas 2D bakgrunn med noder som kobles sammen, unngår musepekeren og
+              reagerer på temaet du velger.
+            </p>
+            <div class="chips">
+              <span class="chip">canvas</span><span class="chip">raf loop</span>
+            </div>
+          </article>
+
+          <article class="card tilt" data-reveal data-delay="90">
+            <div class="card__icon">02</div>
+            <h3>Side-til-side wipe</h3>
+            <p>
+              Hvert sideskift kjører en fargeswipe før navigasjon, med inngangsanimasjon
+              på alle seksjoner etterpå.
+            </p>
+            <div class="chips">
+              <span class="chip">transition</span><span class="chip">stagger</span>
+            </div>
+          </article>
+
+          <article class="card tilt" data-reveal data-delay="180">
+            <div class="card__icon">03</div>
+            <h3>Kommandopalett</h3>
+            <p>
+              Trykk Ctrl+K for å hoppe direkte til en hvilken som helst underside med
+              fuzzy søk og tastaturnavigasjon.
+            </p>
+            <div class="chips">
+              <span class="chip">keyboard</span><span class="chip">search</span>
+            </div>
+          </article>
+
+          <article class="card tilt" data-reveal data-delay="0">
+            <div class="card__icon">04</div>
+            <h3>Custom cursor</h3>
+            <p>
+              Dobbel markør med elastisk oppfølging som vokser når du holder over
+              klikkbare elementer.
+            </p>
+            <div class="chips">
+              <span class="chip">lerp</span><span class="chip">hover</span>
+            </div>
+          </article>
+
+          <article class="card tilt" data-reveal data-delay="90">
+            <div class="card__icon">05</div>
+            <h3>3D-tilt</h3>
+            <p>
+              Kortene roterer i perspektiv etter musposisjonen og returnerer mykt tilbake
+              når du slipper.
+            </p>
+            <div class="chips">
+              <span class="chip">transform</span><span class="chip">perspective</span>
+            </div>
+          </article>
+
+          <article class="card tilt" data-reveal data-delay="180">
+            <div class="card__icon">06</div>
+            <h3>Lydmotor</h3>
+            <p>
+              Mikro-blipper fra WebAudio på klikk, hover og tema-bytte. Av/på huskes i
+              localStorage.
+            </p>
+            <div class="chips">
+              <span class="chip">webaudio</span><span class="chip">state</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section wrap">
+        <div class="split">
+          <div>
+            <div class="eyebrow" data-reveal>// kjørelogg</div>
+            <h2 class="h2" data-reveal data-delay="60">
+              Systemet<br /><span class="grad">logger alt</span>
+            </h2>
+            <p class="lead mt-m" data-reveal data-delay="120">
+              Terminaleffekten skriver seg linje for linje når den kommer inn i visningen.
+              Den er helt ekte tekst — bare hastigheten er tilfeldig.
+            </p>
+            <div class="hero__actions" data-reveal data-delay="180">
+              <a class="btn" href="lab.html">åpne lab'en</a>
+            </div>
+          </div>
+
+          <div class="terminal" data-reveal="right" data-par="0.08">
+            <div class="terminal__bar">
+              <i></i><i></i><i></i><span>nexus@core — /var/log</span>
+            </div>
+            <div class="terminal__body" id="termBody"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-hidden="true">
+        <div class="marquee-word">
+          <span>NEXUS</span><b>NEXUS</b><span>NEXUS</span><b>NEXUS</b>
+        </div>
+      </section>
+
+      <section class="section wrap">
+        <div class="eyebrow" data-reveal>// utvalgt</div>
+        <h2 class="h2" data-reveal data-delay="60">Tre prosjekter<br /><span class="grad">verdt å nevne</span></h2>
+
+        <div class="grid grid--3 mt-l">
+          <a class="project" href="prosjekter.html" data-reveal data-delay="0">
+            <div class="project__viz"><span>ORBIT</span></div>
+            <div class="project__body">
+              <h3>Orbit Dashboard</h3>
+              <p>Sanntids-dashboard med levende grafer, temaer og tastaturnavigasjon.</p>
+              <div class="chips"><span class="chip">js</span><span class="chip">canvas</span></div>
+            </div>
+          </a>
+          <a class="project" href="prosjekter.html" data-reveal data-delay="90">
+            <div class="project__viz"><span>PULSE</span></div>
+            <div class="project__body">
+              <h3>Pulse Player</h3>
+              <p>Lydfil-visuellisering med frekvensstyrte partikler og mikrofontilkobling.</p>
+              <div class="chips"><span class="chip">audio</span><span class="chip">raf</span></div>
+            </div>
+          </a>
+          <a class="project" href="prosjekter.html" data-reveal data-delay="180">
+            <div class="project__viz"><span>GRID</span></div>
+            <div class="project__body">
+              <h3>Grid Engine</h3>
+              <p>Eget rutenettoppsett med magnetfelt, snap-måling og redigeringsmodus.</p>
+              <div class="chips"><span class="chip">layout</span><span class="chip">ui</span></div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section wrap">
+        <div class="card center" data-reveal="zoom">
+          <div class="eyebrow" style="justify-content: center">// neste steg</div>
+          <h2 class="h2">Klar for <span class="grad">mer kaos?</span></h2>
+          <p class="lead mt-s" style="margin-inline: auto">
+            Gå til kontakt sidenen, eller åpne kommandopaletten med Ctrl+K og naviger rundt
+            uten å ta hendene fra tastaturet.
+          </p>
+          <div class="hero__actions" style="justify-content: center; margin-top: 26px">
+            <a class="btn btn--primary" href="kontakt.html">ta kontakt</a>
+            <a class="btn" href="om.html">om meg</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__grid">
+          <div>
+            <a class="nav__brand" href="index.html"><i></i>NEXUS//</a>
+            <p class="lead mt-s" style="font-size: 15px">
+              Bygget for moro skyld. Ingen rammeverk, bare HTML, CSS og JavaScript.
+            </p>
+          </div>
+          <div class="footer__links">
+            <a href="index.html">hjem</a>
+            <a href="prosjekter.html">prosjekter</a>
+            <a href="lab.html">lab</a>
+            <a href="om.html">om meg</a>
+            <a href="kontakt.html">kontakt</a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© 2026 NEXUS SYSTEMS</span>
+          <span class="clock">--:--:--</span>
+          <span>trykk <b class="kbd">Ctrl+K</b> for palett</span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="palette" id="palette">
+      <div class="palette__box">
+        <input id="paletteInput" type="text" placeholder="søk etter side..." autocomplete="off" />
+        <ul id="paletteList">
+          <li data-href="index.html">hjem <span>01</span></li>
+          <li data-href="prosjekter.html">prosjekter <span>02</span></li>
+          <li data-href="lab.html">lab <span>03</span></li>
+          <li data-href="om.html">om meg <span>04</span></li>
+          <li data-href="kontakt.html">kontakt <span>05</span></li>
+        </ul>
+        <div class="palette__hint">↑↓ for å navigere · enter for å åpne · esc for å lukke</div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#04050a" />
+    <title>NEXUS // lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="preloader">
+      <div class="preloader__logo">NEXUS</div>
+      <div class="preloader__bar"><div class="preloader__fill"></div></div>
+      <div class="preloader__meta">
+        <span>kalibrerer lab</span>
+        <span id="preNum">000%</span>
+        <span>v4.0.2</span>
+      </div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="page-wipe"></div>
+    <div class="fx-grid"></div>
+    <canvas id="bgCanvas"></canvas>
+    <div class="fx-vig"></div>
+    <div class="fx-scan"></div>
+    <div class="fx-flash"></div>
+    <div class="progress"></div>
+
+    <header class="nav">
+      <a class="nav__brand" href="index.html"><i></i>NEXUS//</a>
+      <ul class="nav__links">
+        <li><a class="nav__link" href="index.html">hjem</a></li>
+        <li><a class="nav__link" href="prosjekter.html">prosjekter</a></li>
+        <li><a class="nav__link" href="lab.html">lab</a></li>
+        <li><a class="nav__link" href="om.html">om meg</a></li>
+        <li><a class="nav__link" href="kontakt.html">kontakt</a></li>
+      </ul>
+      <div class="nav__tools">
+        <button class="icon-btn" id="paletteBtn" title="kommandopalett (Ctrl+K)">⌘</button>
+        <button class="icon-btn" id="themeBtn" title="tema">◑</button>
+        <button class="icon-btn" id="soundBtn" title="lyd">♪</button>
+        <button class="icon-btn burger" title="meny">≡</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-head wrap">
+        <div class="eyebrow" data-reveal>// eksperiment 01 — 03</div>
+        <h1 class="h1" data-reveal data-delay="70">
+          <span class="glitch" data-text="LABORATORIET">LABORATORIET</span>
+        </h1>
+        <p class="lead" data-reveal data-delay="140">
+          Tre kjørende canvas-eksperimenter med regulerbare parametere. Alt rendres i
+          én requestAnimationFrame-løkke og pauses automatisk når du bytter fane.
+        </p>
+
+        <div class="tabs mt-m" data-reveal data-delay="200">
+          <button class="tab on" data-tab="part">01 / partikler</button>
+          <button class="tab" data-tab="wave">02 / bølger</button>
+          <button class="tab" data-tab="code">03 / matrix</button>
+        </div>
+      </section>
+
+      <section class="wrap" style="padding-bottom: 60px">
+        <div class="panel on" id="panel-part">
+          <div class="lab-stage">
+            <canvas id="cvPart"></canvas>
+            <div class="lab-stage__hud" id="hudPart">partikler: 0</div>
+          </div>
+          <div class="controls">
+            <div class="control">
+              <label for="partCount">antall <span class="mono" id="partCountV">240</span></label>
+              <input type="range" id="partCount" min="40" max="700" value="240" />
+            </div>
+            <div class="control">
+              <label for="partForce">krefter <span class="mono" id="partForceV">0.9</span></label>
+              <input type="range" id="partForce" min="1" max="30" value="9" />
+            </div>
+            <div class="control">
+              <label for="partLink">lenke-avstand <span class="mono" id="partLinkV">130</span></label>
+              <input type="range" id="partLink" min="60" max="240" value="130" />
+            </div>
+            <button class="btn" id="partBurst">eksplosjon</button>
+          </div>
+          <p class="lead mt-s" style="font-size: 15px">
+            Beveg musa over flaten: nodene trekkes mot deg og kobles sammen med linjer
+            når de kommer nærmere enn lenke-avstanden.
+          </p>
+        </div>
+
+        <div class="panel" id="panel-wave">
+          <div class="lab-stage">
+            <canvas id="cvWave"></canvas>
+            <div class="lab-stage__hud" id="hudWave">bølger: 3 kilder</div>
+          </div>
+          <div class="controls">
+            <div class="control">
+              <label for="waveAmp">amplitude <span class="mono" id="waveAmpV">1.0</span></label>
+              <input type="range" id="waveAmp" min="1" max="30" value="10" />
+            </div>
+            <div class="control">
+              <label for="waveSpeed">hastighet <span class="mono" id="waveSpeedV">1.0</span></label>
+              <input type="range" id="waveSpeed" min="1" max="40" value="14" />
+            </div>
+            <div class="control">
+              <label for="waveSrc">kilder <span class="mono" id="waveSrcV">3</span></label>
+              <input type="range" id="waveSrc" min="1" max="7" value="3" />
+            </div>
+            <button class="btn" id="waveKick">send støt</button>
+          </div>
+          <p class="lead mt-s" style="font-size: 15px">
+            Interferensmønster bygget av flere kilder. Klikk i flaten for å slippe løs et
+            sirkulært støt som sprer seg utover.
+          </p>
+        </div>
+
+        <div class="panel" id="panel-code">
+          <div class="lab-stage">
+            <canvas id="cvCode"></canvas>
+            <div class="lab-stage__hud" id="hudCode">kolonner: 0</div>
+          </div>
+          <div class="controls">
+            <div class="control">
+              <label for="codeSpeed">hastighet <span class="mono" id="codeSpeedV">1.0</span></label>
+              <input type="range" id="codeSpeed" min="1" max="50" value="18" />
+            </div>
+            <div class="control">
+              <label for="codeSize"><span class="mono">tegn-størrelse</span> <span class="mono" id="codeSizeV">16</span></label>
+              <input type="range" id="codeSize" min="9" max="30" value="16" />
+            </div>
+            <button class="btn" id="codeGlitch">injiser glitch</button>
+          </div>
+          <p class="lead mt-s" style="font-size: 15px">
+            Klassisk regndrevet tegnstrøm, men med akselererende hoder, fargeskift på
+            tema og periodiske glitch-injeksjoner.
+          </p>
+        </div>
+      </section>
+
+      <section class="section wrap">
+        <div class="grid grid--3">
+          <div class="card" data-reveal>
+            <div class="card__icon">raf</div>
+            <h3>Sentralfrekvens</h3>
+            <p>
+              Alle tre eksperimentene deler én løkke som stanses når fanen ikke er aktiv,
+              så bakgrunnen aldri konkurrerer om CPU.
+            </p>
+          </div>
+          <div class="card" data-reveal data-delay="90">
+            <div class="card__icon">dpi</div>
+            <h3>Retina-klar</h3>
+            <p>
+              Canvas skalerer med devicePixelRatio, men begrenser seg til 2x slik at
+              høy-DPI-skjermer ikke kveler ytelsen.
+            </p>
+          </div>
+          <div class="card" data-reveal data-delay="180">
+            <div class="card__icon">a11y</div>
+            <h3>Respekterer deg</h3>
+            <p>
+              Oppdager prefers-reduced-motion og slår av de tyngste effektene på hele
+              nettsiden automatisk.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__grid">
+          <div>
+            <a class="nav__brand" href="index.html"><i></i>NEXUS//</a>
+            <p class="lead mt-s" style="font-size: 15px">
+              Bygget for moro skyld. Ingen rammeverk, bare HTML, CSS og JavaScript.
+            </p>
+          </div>
+          <div class="footer__links">
+            <a href="index.html">hjem</a>
+            <a href="prosjekter.html">prosjekter</a>
+            <a href="lab.html">lab</a>
+            <a href="om.html">om meg</a>
+            <a href="kontakt.html">kontakt</a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© 2026 NEXUS SYSTEMS</span>
+          <span class="clock">--:--:--</span>
+          <span>trykk <b class="kbd">Ctrl+K</b> for palett</span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="palette" id="palette">
+      <div class="palette__box">
+        <input id="paletteInput" type="text" placeholder="søk etter side..." autocomplete="off" />
+        <ul id="paletteList">
+          <li data-href="index.html">hjem <span>01</span></li>
+          <li data-href="prosjekter.html">prosjekter <span>02</span></li>
+          <li data-href="lab.html">lab <span>03</span></li>
+          <li data-href="om.html">om meg <span>04</span></li>
+          <li data-href="kontakt.html">kontakt <span>05</span></li>
+        </ul>
+        <div class="palette__hint">↑↓ for å navigere · enter for å åpne · esc for å lukke</div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/lab.js"></script>
+  </body>
+</html>

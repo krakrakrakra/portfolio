@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#05060a" />
+    <title>NEON QUIZ // live trivia</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <canvas id="fx"></canvas>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="flash" id="flash" aria-hidden="true"></div>
+
+    <header class="hud">
+      <div class="hud-left">
+        <span class="logo">NEON<span>QUIZ</span></span>
+        <span class="chip" id="chipCategory">ALLE KATEGORIER</span>
+        <span class="chip chip-diff" id="chipDifficulty">BLANDET</span>
+      </div>
+
+      <div class="hud-mid">
+        <div class="track"><div class="fill" id="progressFill"></div></div>
+        <span class="counter mono" id="qCounter">00 / 10</span>
+      </div>
+
+      <div class="hud-right">
+        <div class="scorebox">
+          <span class="label">SCORE</span>
+          <span class="value mono" id="scoreValue">0</span>
+        </div>
+        <div class="sound" id="soundBtn" title="lyd av/på"><span></span><span></span><span></span></div>
+        <div class="lives" id="lives">
+          <img src="hjerte.png" alt="liv" />
+          <img src="hjerte.png" alt="liv" />
+          <img src="hjerte.png" alt="liv" />
+          <img src="hjerte.png" alt="liv" />
+          <img src="hjerte.png" alt="liv" />
+        </div>
+      </div>
+    </header>
+
+    <main class="stage">
+      <!-- ================= START ================= -->
+      <section class="screen is-active" id="screenStart">
+        <div class="panel intro">
+          <p class="kicker mono">// system ready</p>
+          <h1 class="title">TRIVIA<span>OVERDRIVE</span></h1>
+          <p class="sub">
+            10 spørsmål. 20 sekunder hver. 5 liv. Fra ekte data levert av
+            <b>The&nbsp;Trivia&nbsp;API</b>.
+          </p>
+
+          <div class="options-row">
+            <label class="field">
+              <span class="mono">kategori</span>
+              <div class="select" data-select>
+                <select id="selCategory">
+                  <option value="all">ALLE</option>
+                  <option value="science">VITENSKAP</option>
+                  <option value="history">HISTORIE</option>
+                  <option value="geography">GEOGRAFI</option>
+                  <option value="film_and_tv">FILM &amp; TV</option>
+                  <option value="music">MUSIKK</option>
+                  <option value="arts_and_literature">KUNST</option>
+                  <option value="food_and_drink">MAT &amp; DRIKKE</option>
+                  <option value="sport_and_leisure">SPORT</option>
+                  <option value="society_and_culture">SAMFUNN</option>
+                  <option value="general_knowledge">GENERAL</option>
+                </select>
+              </div>
+            </label>
+
+            <label class="field">
+              <span class="mono">vanskelighet</span>
+              <div class="select" data-select>
+                <select id="selDifficulty">
+                  <option value="all">BLANDET</option>
+                  <option value="easy">ENKEL</option>
+                  <option value="medium">MEDIUM</option>
+                  <option value="hard">VANSKELIG</option>
+                </select>
+              </div>
+            </label>
+          </div>
+
+          <button class="btn btn-primary" id="btnStart">
+            <span>START RUN</span>
+            <em class="mono">[ enter ]</em>
+          </button>
+
+          <p class="hint mono" id="startHint">trykk enter eller klikk for å starte</p>
+        </div>
+      </section>
+
+      <!-- ================= LOADING ================= -->
+      <section class="screen" id="screenLoad">
+        <div class="loader">
+          <div class="loader-ring"></div>
+          <p class="mono" id="loadText">henter spørsmål fra API ...</p>
+          <div class="dots"><i></i><i></i><i></i><i></i><i></i></div>
+          <button class="btn btn-ghost" id="btnRetry" hidden><span>PRØV IGJEN</span></button>
+        </div>
+      </section>
+
+      <!-- ================= QUIZ ================= -->
+      <section class="screen" id="screenQuiz">
+        <div class="question-head">
+          <div class="qmeta">
+            <span class="chip" id="qCategory">science</span>
+            <span class="chip chip-diff" id="qDifficulty">medium</span>
+            <span class="chip chip-streak" id="qStreak">streak x0</span>
+          </div>
+          <div class="timer" id="timer">
+            <svg viewBox="0 0 64 64">
+              <circle class="timer-bg" cx="32" cy="32" r="27"></circle>
+              <circle class="timer-fg" cx="32" cy="32" r="27" id="timerRing"></circle>
+            </svg>
+            <span class="mono" id="timerText">20</span>
+          </div>
+        </div>
+
+        <div class="panel question" id="questionPanel">
+          <p class="qnum mono" id="qNum">SPØRSMÅL 01</p>
+          <h2 id="questionText">...</h2>
+        </div>
+
+        <div class="answers" id="answers"></div>
+
+        <div class="feedback" id="feedback" aria-live="polite"></div>
+      </section>
+
+      <!-- ================= RESULT ================= -->
+      <section class="screen" id="screenResult">
+        <div class="panel result">
+          <p class="kicker mono" id="resultKicker">// run complete</p>
+          <div class="ring-wrap">
+            <svg viewBox="0 0 200 200" class="ring">
+              <circle class="ring-bg" cx="100" cy="100" r="86"></circle>
+              <circle class="ring-fg" cx="100" cy="100" r="86" id="resultRing"></circle>
+            </svg>
+            <div class="ring-label">
+              <strong class="mono" id="resultPercent">0%</strong>
+              <span id="resultGrade">-</span>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat"><span class="mono">score</span><b class="mono" id="statScore">0</b></div>
+            <div class="stat"><span class="mono">riktige</span><b class="mono" id="statCorrect">0</b></div>
+            <div class="stat"><span class="mono">best streak</span><b class="mono" id="statStreak">0</b></div>
+            <div class="stat"><span class="mono">tid brukt</span><b class="mono" id="statTime">0s</b></div>
+          </div>
+
+          <button class="btn btn-primary" id="btnAgain">
+            <span>KJØR IGJEN</span>
+            <em class="mono">[ enter ]</em>
+          </button>
+          <button class="btn btn-ghost" id="btnMenu"><span>ENDRE INNSTILLINGER</span></button>
+
+          <p class="credit mono">data: the-trivia-api.com // CC BY-NC 4.0</p>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast-wrap" id="toastWrap"></div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

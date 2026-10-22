@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#04050a" />
+    <title>NEXUS // om meg</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="preloader">
+      <div class="preloader__logo">NEXUS</div>
+      <div class="preloader__bar"><div class="preloader__fill"></div></div>
+      <div class="preloader__meta">
+        <span>leser profildata</span>
+        <span id="preNum">000%</span>
+        <span>v4.0.2</span>
+      </div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="page-wipe"></div>
+    <div class="fx-grid"></div>
+    <canvas id="bgCanvas"></canvas>
+    <div class="fx-vig"></div>
+    <div class="fx-scan"></div>
+    <div class="fx-flash"></div>
+    <div class="progress"></div>
+
+    <header class="nav">
+      <a class="nav__brand" href="index.html"><i></i>NEXUS//</a>
+      <ul class="nav__links">
+        <li><a class="nav__link" href="index.html">hjem</a></li>
+        <li><a class="nav__link" href="prosjekter.html">prosjekter</a></li>
+        <li><a class="nav__link" href="lab.html">lab</a></li>
+        <li><a class="nav__link" href="om.html">om meg</a></li>
+        <li><a class="nav__link" href="kontakt.html">kontakt</a></li>
+      </ul>
+      <div class="nav__tools">
+        <button class="icon-btn" id="paletteBtn" title="kommandopalett (Ctrl+K)">⌘</button>
+        <button class="icon-btn" id="themeBtn" title="tema">◑</button>
+        <button class="icon-btn" id="soundBtn" title="lyd">♪</button>
+        <button class="icon-btn burger" title="meny">≡</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-head wrap">
+        <div class="eyebrow" data-reveal>// operatørprofil</div>
+        <h1 class="h1" data-reveal data-delay="70">
+          <span class="glitch" data-text="OM MEG">OM MEG</span>
+        </h1>
+      </section>
+
+      <section class="wrap">
+        <div class="profile" data-reveal>
+          <div class="avatar"><span>NX</span></div>
+          <div>
+            <h2 class="h2">Digital<br /><span class="grad">håndverker</span></h2>
+            <p class="lead mt-m">
+              Jeg bygger grensesnitt som beveger seg, lager animasjoner litt for langt og
+              liker å overkomplisere enkle ting — akkurat passe. Her er en side uten
+              rammeverk, med fem undersider og alt fra egne canvas-motorer til en
+              kommandopalett.
+            </p>
+            <div class="chips mt-m">
+              <span class="chip">javascript</span>
+              <span class="chip">canvas 2d</span>
+              <span class="chip">css-arkitektur</span>
+              <span class="chip">web audio</span>
+              <span class="chip">designsystem</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section wrap">
+        <div class="split">
+          <div>
+            <div class="eyebrow" data-reveal>// ferdigheter</div>
+            <h2 class="h2" data-reveal data-delay="60">Hva jeg<br /><span class="grad">kan best</span></h2>
+
+            <div class="mt-l">
+              <div class="skill" data-reveal>
+                <div class="skill__top"><span>JavaScript / DOM</span><span>94%</span></div>
+                <div class="skill__bar"><div class="skill__fill" data-skill="94"></div></div>
+              </div>
+              <div class="skill" data-reveal data-delay="60">
+                <div class="skill__top"><span>CSS &amp; animasjon</span><span>91%</span></div>
+                <div class="skill__bar"><div class="skill__fill" data-skill="91"></div></div>
+              </div>
+              <div class="skill" data-reveal data-delay="120">
+                <div class="skill__top"><span>Canvas / WebGL</span><span>82%</span></div>
+                <div class="skill__bar"><div class="skill__fill" data-skill="82"></div></div>
+              </div>
+              <div class="skill" data-reveal data-delay="180">
+                <div class="skill__top"><span>UI / UX design</span><span>77%</span></div>
+                <div class="skill__bar"><div class="skill__fill" data-skill="77"></div></div>
+              </div>
+              <div class="skill" data-reveal data-delay="240">
+                <div class="skill__top"><span>Backend / API</span><span>68%</span></div>
+                <div class="skill__bar"><div class="skill__fill" data-skill="68"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid" data-reveal="right">
+            <div class="card">
+              <div class="card__icon">Σ</div>
+              <h3>Nøkkeltall</h3>
+              <div class="grid grid--3 mt-s" style="gap: 10px">
+                <div class="stat"><b data-count="47" data-suffix="+">0</b><span>animasjoner</span></div>
+                <div class="stat"><b data-count="9">0</b><span>prosjekter</span></div>
+                <div class="stat"><b data-count="3" data-suffix=" år">0</b><span>underholdning</span></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__icon">⌘</div>
+              <h3>Verktøykasse</h3>
+              <p>
+                VS Code, Figma, Git, Node, Chrome DevTools, og en altfor stor samling
+                npm-pakker jeg sjelden trenger.
+              </p>
+              <div class="chips mt-s">
+                <span class="chip">vscode</span><span class="chip">figma</span>
+                <span class="chip">git</span><span class="chip">node</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__icon">◍</div>
+              <h3>Arbeidsmåte</h3>
+              <p>
+                Skisser først, prototyper raskt, polerer til det knirker. Måler ytelse og
+                tester på ekte enheter før noe kalles ferdig.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section wrap">
+        <div class="eyebrow" data-reveal>// tidslinje</div>
+        <h2 class="h2" data-reveal data-delay="60">Så langt<br /><span class="grad">i reisen</span></h2>
+
+        <div class="timeline mt-l">
+          <div class="timeline__item" data-reveal="left">
+            <time>2026 — nå</time>
+            <h4>NEXUS-systemet</h4>
+            <p>
+              Bygde denne flersides laben med egen kommandopalett, partikkelnettverk og
+              tre canvas-eksperimenter — helt uten rammeverk.
+            </p>
+          </div>
+          <div class="timeline__item" data-reveal="left" data-delay="80">
+            <time>2025</time>
+            <h4>Canvas og lyd</h4>
+            <p>
+              Gikk i dybden på Web Audio API og frekvensanalyse, og bygde visualiseringer
+              som reagerer på mikrofon og filer.
+            </p>
+          </div>
+          <div class="timeline__item" data-reveal="left" data-delay="160">
+            <time>2024</time>
+            <h4>Animasjonsbesettelsen</h4>
+            <p>
+              Begynte å eksperimentere med scroll-drevne effekter, stagger-animasjoner og
+              egne easing-funksjoner.
+            </p>
+          </div>
+          <div class="timeline__item" data-reveal="left" data-delay="240">
+            <time>2023</time>
+            <h4>Første linje kode</h4>
+            <p>
+              HTML og CSS. Lagde en personlig side med en teller og for mye gradient —
+              starten på alt dette.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section wrap">
+        <div class="card center" data-reveal="zoom">
+          <div class="status"><i></i> ledig for nye oppdrag</div>
+          <h2 class="h2 mt-m">La oss lage noe<br /><span class="grad">sammen</span></h2>
+          <div class="hero__actions" style="justify-content: center; margin-top: 26px">
+            <a class="btn btn--primary" href="kontakt.html">kontakt meg</a>
+            <a class="btn" href="prosjekter.html">se arbeidet</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__grid">
+          <div>
+            <a class="nav__brand" href="index.html"><i></i>NEXUS//</a>
+            <p class="lead mt-s" style="font-size: 15px">
+              Bygget for moro skyld. Ingen rammeverk, bare HTML, CSS og JavaScript.
+            </p>
+          </div>
+          <div class="footer__links">
+            <a href="index.html">hjem</a>
+            <a href="prosjekter.html">prosjekter</a>
+            <a href="lab.html">lab</a>
+            <a href="om.html">om meg</a>
+            <a href="kontakt.html">kontakt</a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© 2026 NEXUS SYSTEMS</span>
+          <span class="clock">--:--:--</span>
+          <span>trykk <b class="kbd">Ctrl+K</b> for palett</span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="palette" id="palette">
+      <div class="palette__box">
+        <input id="paletteInput" type="text" placeholder="søk etter side..." autocomplete="off" />
+        <ul id="paletteList">
+          <li data-href="index.html">hjem <span>01</span></li>
+          <li data-href="prosjekter.html">prosjekter <span>02</span></li>
+          <li data-href="lab.html">lab <span>03</span></li>
+          <li data-href="om.html">om meg <span>04</span></li>
+          <li data-href="kontakt.html">kontakt <span>05</span></li>
+        </ul>
+        <div class="palette__hint">↑↓ for å navigere · enter for å åpne · esc for å lukke</div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

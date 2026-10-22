@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1>JS Quiz!</h1>
+    
+    <p id="poeng">Riktige: 0 | Feil: 0</p>
+    
+    <div id="lives" class="lives" style="display: flex;">
+      <img src="hjerte.png" alt="liv">
+      <img src="hjerte.png" alt="liv">
+      <img src="hjerte.png" alt="liv">
+      <img src="hjerte.png" alt="liv">
+      <img src="hjerte.png" alt="liv">
+    </div>
+
+    <main class="quiz">
+      <section>
+        <div class="boxes">
+          <div class="box" onclick="kl('f', this)"></div>
+          <div class="box" onclick="kl('r', this)"></div>
+          <div class="box" onclick="kl('f', this)"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="boxes">
+          <div class="box" onclick="kl('f', this)"></div>
+          <div class="box" onclick="kl('r', this)"></div>
+          <div class="box" onclick="kl('f', this)"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="boxes">
+          <div class="box" onclick="kl('f', this)"></div>
+          <div class="box" onclick="kl('r', this)"></div>
+          <div class="box" onclick="kl('f', this)"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="boxes">
+          <div class="box" onclick="kl('f', this)"></div>
+          <div class="box" onclick="kl('r', this)"></div>
+          <div class="box" onclick="kl('f', this)"></div>
+        </div>
+      </section>
+    </main>
+    <script src="index.js">
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+
+body {
+    background-image: url("ape.png");
+   background-repeat: repeat;
+   margin: 0;
+   
+}
+
+
+
+
+.kl {
+  list-style: none;      
+  display: flex;  
+  margin: 0px;      
+  justify-content: space-evenly;            
+  padding: 8px;
+  background-color: black;
+}
+
+.k {
+   display: inline-block;
+   width: 120; 
+   padding: 10px 0px;
+   font-size: 16px;
+   background-color: navy;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   text-decoration: none;
+   text-align: center;
+}
+
+.k:hover {
+  background-color: rgb(15, 15, 44);
+}
+
+.bib {
+   display: block;
+   margin: auto;
+   margin-top: 50px;
+
+
+
+}

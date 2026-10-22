@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hjem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
+</head>
+
+<body class="hjem">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="bilde.html">Bilder</a></li>
+                <li><a href="ski.html">Ski</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Nettside om Rasmus Dalby</h1>
+        <p>Skroll ned eller bruk knappene på toppen for å orentere deg</p>
+        <div class="pil"></div>
+
+
+
+    </section>
+
+    <section id="bilder">
+        <h2>Du kan også trykke på hvert bilde for å komme til neste side</h2>
+        <div class="rad">
+            <a href="bilde.html" class="boks"><img src="tur.JPG"></a>
+            <a href="bilde.html" class="boks"><img src="telt.JPG"></a>
+            <a href="bilde.html" class="boks"><img src="vintertur.JPG"></a>
+            <a href="bilde.html" class="boks"><img src="stein.JPG"></a>
+            <a href="bilde.html" class="boks"><img src="gunner.JPG"></a>
+        </div>
+    </section>
+
+    <section id="ski">
+        <h2>Du kan også trykke på hvert bilde for å komme til neste side</h2>
+        <div class="topp">
+            <a href="ski.html" class="stor"><img src="kid.JPG"></a>
+        </div>
+        <div class="bunn">
+            <a href="ski.html" class="liten"><img src="SSL.JPG"></a>
+            <a href="ski.html" class="liten"><img src="SL.JPG"></a>
+        </div>
+    </section>
+
+
+
+    <section id="margin"></section>
+
+
+
+    <div class="tema">
+        <div>
+            <h4>Trykk på knappene ---></h4>
+        </div>
+        <button onclick="document.body.classList.remove('bla','rod')">Sort</button>
+        <button onclick="document.body.classList.remove('rod');document.body.classList.add('bla')">Blå</button>
+        <button onclick="document.body.classList.remove('bla');document.body.classList.add('rod')">Rød</button>
+
+    </div>
+
+</body>
+
+</html>

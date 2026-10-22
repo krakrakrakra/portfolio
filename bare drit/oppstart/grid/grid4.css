@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+body {
+    background-color: lightblue;
+    padding: clamp(16px, 5vmin, 48px);
+    font-size: clamp(0.95rem, 0.8rem + 1vmin, 1.2rem);
+    color: white;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.grid {
+    margin: auto;
+    width: clamp(320px, 80vmin, 900px);
+    height: clamp(320px, 80vmin, 900px);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: clamp(10px, 2vmin, 20px);
+}
+
+
+.grid>div {
+    border: clamp(1px, 0.3vmin, 3px) solid black;
+    border-radius: clamp(8px, 2vmin, 18px);
+    padding: clamp(12px, 3vmin, 28px);
+    background-color: purple;
+
+    display: flex;
+    flex-direction: column;
+    gap: clamp(6px, 1vmin, 12px);
+}
+
+.grid h2 {
+    font-size: clamp(1.2rem, 1rem + 2vmin, 2rem);
+    line-height: 1.2;
+    align-self: center;
+}
+
+.grid p {
+    font-size: clamp(0.9rem, 0.7rem + 1.2vmin, 1.15rem);
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.grid>div:nth-child(2) {
+    grid-column: span 2;
+    background-color: green;
+}
+
+.grid div:nth-child(3) {
+    grid-column: span 2;
+    grid-row: span 2;
+    background-color: orange;
+}
+
+
+@media (width < 600px) {
+    body {
+        background-color: black;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        
+    }
+
+    .grid div:nth-child(3),
+    .grid>div:nth-child(2) {
+        grid-column: span 1;
+    }
+
+    .grid div:nth-child(3) {
+        grid-row: span 1;
+    }
+
+    .grid {
+        width: clamp(200px, 90vw, 480px);
+        height: ;
+       
+    }
+
+    
+}

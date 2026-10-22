@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ski</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
+</head>
+
+<body class="ski">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="bilde.html">Bilder</a></li>
+                <li><a href="ski.html">Ski</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Ski</h1>
+        <div class="pil"></div>
+        <div class="pil2"></div>
+    </section>
+    <section>
+        <div class="topp">
+            <a class="stor" href="ski.html"><img src="kid.JPG"><p class="tekst">jeg har stått aktivt på ski siden jeg var 3, trykk på de to små bildene for å lære mer om hver gren</p></a>
+        </div>
+        <div class="bunn">
+            <a class="liten" target="_blank" href="https://snl.no/storslal%C3%A5m"><img src="SSL.JPG"></a>
+            <a class="liten" target="_blank" href="https://snl.no/slal%c3%a5m"><img src="SL.JPG"></a>
+        </div>
+    </section>
+    <div class="tema">
+        <button onclick="document.body.classList.remove('bla','rod')">Sort</button>
+        <button onclick="document.body.classList.remove('rod');document.body.classList.add('bla')">Blå</button>
+        <button onclick="document.body.classList.remove('bla');document.body.classList.add('rod')">Rød</button>
+    </div>
+</body>
+
+</html>

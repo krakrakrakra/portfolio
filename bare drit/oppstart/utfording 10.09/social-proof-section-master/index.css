@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {}
+
+#øv {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    margin-top: 100px;
+    margin-left: 75px;
+
+
+}
+
+#øv h1 {
+    color: purple;
+    font-size: 55px;
+    max-width: 400px;
+    margin-top: 10px;
+    margin-left: 50px;
+
+}
+
+#øv h2 {
+
+    max-width: 500px;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+#øv .en,
+#øv .to,
+#øv .tre {
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 450px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    background-color: rgb(249, 209, 249);
+    display: flex;
+    justify-content: space-evenly;
+    
+
+}
+.ens {
+    display: flex;
+    justify-content: space-evenly;
+    width: 150px;
+}
+
+#øv .to {
+    margin-left: 50px;
+
+
+
+}
+
+#øv .tre {
+    margin-left: 90px;
+
+
+}
+
+.stj {
+
+    display: inline-block;
+    margin-top: 25px;
+    margin-left: 150px;
+
+}
+
+#nd {
+
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+
+
+}
+
+.box1,
+.box2,
+.box3 {
+    background-color: purple;
+    color: white;
+    padding: 30px;
+    width: 300px;
+    border-radius: 10%;
+    height: 25vh;
+
+
+}
+
+.box2 {
+    margin-top: 25px;
+}
+
+.box3 {
+
+    margin-top: 50px;
+}

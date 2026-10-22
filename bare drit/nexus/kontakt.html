@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#04050a" />
+    <title>NEXUS // kontakt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="preloader">
+      <div class="preloader__logo">NEXUS</div>
+      <div class="preloader__bar"><div class="preloader__fill"></div></div>
+      <div class="preloader__meta">
+        <span>åpner kanal</span>
+        <span id="preNum">000%</span>
+        <span>v4.0.2</span>
+      </div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="page-wipe"></div>
+    <div class="fx-grid"></div>
+    <canvas id="bgCanvas"></canvas>
+    <div class="fx-vig"></div>
+    <div class="fx-scan"></div>
+    <div class="fx-flash"></div>
+    <div class="progress"></div>
+
+    <header class="nav">
+      <a class="nav__brand" href="index.html"><i></i>NEXUS//</a>
+      <ul class="nav__links">
+        <li><a class="nav__link" href="index.html">hjem</a></li>
+        <li><a class="nav__link" href="prosjekter.html">prosjekter</a></li>
+        <li><a class="nav__link" href="lab.html">lab</a></li>
+        <li><a class="nav__link" href="om.html">om meg</a></li>
+        <li><a class="nav__link" href="kontakt.html">kontakt</a></li>
+      </ul>
+      <div class="nav__tools">
+        <button class="icon-btn" id="paletteBtn" title="kommandopalett (Ctrl+K)">⌘</button>
+        <button class="icon-btn" id="themeBtn" title="tema">◑</button>
+        <button class="icon-btn" id="soundBtn" title="lyd">♪</button>
+        <button class="icon-btn burger" title="meny">≡</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-head wrap">
+        <div class="eyebrow" data-reveal>// åpen kanal</div>
+        <h1 class="h1" data-reveal data-delay="70">
+          <span class="glitch" data-text="KONTAKT">KONTAKT</span>
+        </h1>
+        <p class="lead" data-reveal data-delay="140">
+          Skjemaet valideres linje for linje mens du skriver. Det er ingen server bak —
+          suksessvisningen er like falsk som den er stilig.
+        </p>
+        <div class="mt-m" data-reveal data-delay="200">
+          <span class="status"><i></i> svarer vanligvis innen 24 t</span>
+        </div>
+      </section>
+
+      <section class="wrap" style="padding-bottom: 40px">
+        <div class="split">
+          <div class="card" data-reveal="left">
+            <div class="eyebrow">// melding</div>
+            <form class="form" id="contactForm" novalidate>
+              <div class="field" data-field>
+                <input type="text" id="name" name="name" placeholder=" " autocomplete="name" />
+                <label for="name">navn</label>
+                <div class="field__err" data-err>navn må være minst 2 tegn</div>
+              </div>
+
+              <div class="field" data-field>
+                <input type="email" id="email" name="email" placeholder=" " autocomplete="email" />
+                <label for="email">e-post</label>
+                <div class="field__err" data-err>ugyldig e-postadresse</div>
+              </div>
+
+              <div class="field" data-field>
+                <textarea id="msg" name="msg" placeholder=" " maxlength="400"></textarea>
+                <label for="msg">melding</label>
+                <div class="field__err" data-err>skriv minst 10 tegn</div>
+              </div>
+
+              <div class="form__foot">
+                <button class="btn btn--primary" type="submit">send melding</button>
+                <span class="counter"><span id="chars">0</span>/400 tegn</span>
+              </div>
+            </form>
+
+            <div class="sent" id="sent">
+              <b>&gt;&gt; melding kryptert og sendt</b>
+              <p class="mt-s" style="font-size: 13px; line-height: 1.7">
+                Status: ACCEPTED · rute: local-loop · forventet svartid: 24t
+                <br />Takk, <span id="sentName">operatør</span>. Vi hører fra oss.
+              </p>
+            </div>
+          </div>
+
+          <div data-reveal="right">
+            <div class="grid">
+              <div class="card">
+                <div class="card__icon">@</div>
+                <h3>Direkte</h3>
+                <p>
+                  E-post er fortsatt raskest:
+                  <a href="mailto:hei@nexus.example" style="color: var(--a)">hei@nexus.example</a>
+                </p>
+                <div class="chips mt-s">
+                  <span class="chip">epost</span><span class="chip">discord</span>
+                  <span class="chip">github</span>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__icon">?</div>
+                <h3>Ofte stilte spørsmål</h3>
+                <div class="mt-s">
+                  <div class="acc">
+                    <button class="acc__q" type="button">
+                      Er denne siden laget uten rammeverk? <i>+</i>
+                    </button>
+                    <div class="acc__a">
+                      Ja. Ren HTML, CSS og JavaScript. Ingen React, ingen bygg-steg — bare
+                      filer du kan åpne i nettleseren.
+                    </div>
+                  </div>
+                  <div class="acc">
+                    <button class="acc__q" type="button">
+                      Hva er Ctrl+K? <i>+</i>
+                    </button>
+                    <div class="acc__a">
+                      Kommandopaletten. Den lar deg søke og hoppe mellom alle fem sidene
+                      uten å bruke musa.
+                    </div>
+                  </div>
+                  <div class="acc">
+                    <button class="acc__q" type="button">
+                      Hvor lagres dataene mine? <i>+</i>
+                    </button>
+                    <div class="acc__a">
+                      Ingen sted. Skjemaet kjøres kun i nettleseren, og tema/lyd-preferanser
+                      ligger i localStorage.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__icon">◷</div>
+                <h3>Lokal tid</h3>
+                <p class="mono clock" style="font-size: 18px; color: var(--a)">--:--:--</p>
+                <p class="mt-s" style="font-size: 14px">
+                  Arbeidstid: man–fre, 09:00–16:00 (men koden skriver seg selv om natta).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section wrap">
+        <div class="marquee-word" aria-hidden="true">
+          <span>SENDsignal</span><b>SENDsignal</b>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__grid">
+          <div>
+            <a class="nav__brand" href="index.html"><i></i>NEXUS//</a>
+            <p class="lead mt-s" style="font-size: 15px">
+              Bygget for moro skyld. Ingen rammeverk, bare HTML, CSS og JavaScript.
+            </p>
+          </div>
+          <div class="footer__links">
+            <a href="index.html">hjem</a>
+            <a href="prosjekter.html">prosjekter</a>
+            <a href="lab.html">lab</a>
+            <a href="om.html">om meg</a>
+            <a href="kontakt.html">kontakt</a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© 2026 NEXUS SYSTEMS</span>
+          <span class="clock">--:--:--</span>
+          <span>trykk <b class="kbd">Ctrl+K</b> for palett</span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="palette" id="palette">
+      <div class="palette__box">
+        <input id="paletteInput" type="text" placeholder="søk etter side..." autocomplete="off" />
+        <ul id="paletteList">
+          <li data-href="index.html">hjem <span>01</span></li>
+          <li data-href="prosjekter.html">prosjekter <span>02</span></li>
+          <li data-href="lab.html">lab <span>03</span></li>
+          <li data-href="om.html">om meg <span>04</span></li>
+          <li data-href="kontakt.html">kontakt <span>05</span></li>
+        </ul>
+        <div class="palette__hint">↑↓ for å navigere · enter for å åpne · esc for å lukke</div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/kontakt.js"></script>
+  </body>
+</html>

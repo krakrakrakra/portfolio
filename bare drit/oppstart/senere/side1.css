@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.os {
+    background-color: pink;
+    border-style: solid;
+    border-radius: 100px;
+    text-align: center;
+    border: 20px;
+    padding: 20;
+    color: white;
+    font-size: 100px;
+    text-decoration: underline purple;
+    font-family: 'Courier New', Courier, monospace;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+}
+
+body {
+
+    margin: 0;
+    background-color: purple;
+}
+
+.n {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50 vh;
+    /* ← manglet, trengs for vertikal sentrering */
+    margin-top: 5%;
+    width: fit-content;
+}
+
+img {
+    border-radius: 50%;
+    width: 40%;
+    border-color: purple;
+    /* ← var "border: purple" som nullstilte alt */
+    border-style: outset;
+    border-width: 20px;
+    /* ← fjernet ¨ på slutten */
+    padding: 0px;
+    /* ← var "0x" */
+    margin-left: -150px;
+}
+
+img:first-child {
+    margin-left: 0;
+}
+
+img:hover {
+    z-index: 100;
+    /* bildet du holder over kommer øverst */
+    position: relative;
+}

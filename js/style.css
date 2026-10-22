@@ -1,0 +1,133 @@
+:root {
+  --page-background: #0a0a0a;
+  --text-color: #f5f5f5;
+  --panel-background: #111;
+  --border-color: #555;
+  --section-border-color: #444;
+  --box-background: #1e1e1e;
+  --box-border-color: #666;
+  --box-hover-background: #e8e8e8;
+  --box-hover-color: black;
+  --heart-color: white;
+  --heart-top: 50px;
+  --heart-left: 50px;
+  --heart-size: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+html {
+  background: var(--page-background);
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Short Stack', Arial, sans-serif;
+  color: var(--text-color);
+  background-color: var(--page-background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px 80px;
+}
+
+h1 {
+  padding: 12px 32px;
+  background-color: var(--panel-background);
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  width: fit-content;
+  margin-bottom: 40px;
+  font-size: clamp(24px, 5vw, 44px);
+  letter-spacing: 1px;
+}
+
+#poeng {
+  margin-bottom: 12px;
+  font-size: clamp(16px, 3vw, 22px);
+}
+
+.lives {
+  gap: 8px;
+  margin-bottom: 24px;
+  min-height: 40px;
+  justify-content: center;
+}
+
+.lives img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.lives i {
+  font-size: 2rem;
+}
+
+.quiz {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: min(90vw, 700px);
+}
+
+.quiz section {
+  padding: 32px;
+  border-radius: 16px;
+  background-color: var(--panel-background);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.quiz h2 {
+  font-size: clamp(16px, 3vw, 24px);
+}
+
+.boxes {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 24px;
+  border-top: 1px solid var(--section-border-color);
+  padding-top: 24px;
+}
+
+.box {
+  min-width: 120px;
+  min-height: 100px;
+  padding: 12px 16px;
+  border: 1px solid var(--box-border-color);
+  border-radius: 12px;
+  background-color: var(--box-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.box:hover {
+  background-color: var(--box-hover-background);
+  color: var(--box-hover-color);
+}
+
+
+.sf {
+  position: fixed;
+  top: var(--heart-top);
+  left: var(--heart-left);
+  color: var(--heart-color);
+  font-size: var(--heart-size);
+}
